@@ -1,0 +1,51 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  padding: 3rem; }
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: "box-1 box-1 box-2 box-2 box-3 box-3" "box-4 box-4 box-4 box-5 box-5 box-5";
+  gap: 3rem; }
+  .gallery__img {
+    overflow: hidden;
+    position: relative; }
+    .gallery__img img {
+      width: 100%;
+      transition: all 2s ease-out; }
+    .gallery__img span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 70%);
+      z-index: 10;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 3rem;
+      transition: all 0.5s ease-out;
+      opacity: 0; }
+    .gallery__img:hover img {
+      transform: scale(1.15);
+      filter: blur(2px); }
+    .gallery__img:hover span {
+      transform: translate(-50%, -50%);
+      opacity: 1;
+      color: white; }
+    .gallery__img--1 {
+      grid-area: box-1; }
+    .gallery__img--2 {
+      grid-area: box-2; }
+    .gallery__img--3 {
+      grid-area: box-3; }
+    .gallery__img--4 {
+      grid-area: box-4; }
+    .gallery__img--5 {
+      grid-area: box-5; }

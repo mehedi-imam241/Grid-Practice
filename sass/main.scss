@@ -1,0 +1,71 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    padding: 3rem;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "box-1 box-1 box-2 box-2 box-3 box-3"
+        "box-4 box-4 box-4 box-5 box-5 box-5";
+    gap: 3rem;
+
+    &__img {
+        overflow: hidden;
+        position: relative;
+        & img {
+            width: 100%;
+            transition: all 2s ease-out;
+        }
+        & span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 70%);
+            z-index: 10;
+            color: rgba($color: white, $alpha: 0.7);
+            font-size: 3rem;
+            transition: all 0.5s ease-out;
+            opacity: 0;
+        }
+
+        &:hover img {
+            transform: scale(1.15);
+            filter: blur(2px);
+        }
+
+        &:hover span {
+            transform: translate(-50%, -50%);
+            opacity: 1;
+            color: white;
+        }
+
+        &--1 {
+            grid-area: box-1;
+        }
+        &--2 {
+            grid-area: box-2;
+        }
+        &--3 {
+            grid-area: box-3;
+        }
+        &--4 {
+            grid-area: box-4;
+        }
+        &--5 {
+            grid-area: box-5;
+        }
+    }
+}
